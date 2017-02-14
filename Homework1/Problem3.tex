@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\begin{document}
+
+\noindent Problem 3: Suppose I need to compute the series $f_{n}=f^{2}_{n-1}$. If the value $f_0 = 2$, what is the maximum n that can be stored in the following C++ data types, assuming that an int is 2 bytes, a long int is 4 bytes, and each byte stores 4 bits?
+\newline
+\hfill\break
+Let us try out the first few terms of this recursive formula first: 
+$f_{1}=f^{2}_{0}=2^2$;
+$f_{2}=f^{2}_{1}=(2^2)^2=2^4=2^{2^2}$;
+$f_{3}=f^{2}_{2}=(2^4)^2=2^8=2^{2^3}$;
+$f_{4}=f^{2}_{3}=(2^8)^2=2^{16}=2^{2^4}$.
+\newline
+So we can see that this function $f_{n}$ can be rewritten as
+\begin{equation}
+ f_{n}=2^{2^{n}}. 
+\end{equation}
+\newline
+The next thing we should notice about is that in this question each byte can only stores 4 bits instead of 8. 
+\newline
+\hfill\break
+a) int
+\newline
+An int is 2 bytes which is equal to 8 bits, so the size of it is $2^8$. However since int contains negative numbers, so the maximum of int is 
+\begin{equation}
+\frac{2^8}{2}-1=2^7-1, 
+\end{equation}
+where the $-1$ is the counting for 0. Since $f_{2}<2^7-1<f_{3}$, the maximum n can be stored in an int is 2.   
+\newline
+\hfill\break
+b) long int
+\newline
+A long int is 4 bytes which is equal to 16 bits, so the size of it is $2^{16}$. Again half the size of it is used to represent negative numbers, so the maximum of long int is
+\begin{equation}
+\frac{2^{16}}{2}-1=2^{15}-1, 
+\end{equation}
+Since $f_{3}<2^{15}-1<f_{4}$, the maximum n can be stored in a long int is 3.   
+\newline
+\hfill\break
+c) unsigned long int
+\newline
+This time the long int is unsigned, so the range of it is from 0 to $2^{16}-1$. Since $f_{3}<2^{16}-1<f_{4}$, the maximum n can be stored in an unsigned long int is still 3.     
+
+\end{document}

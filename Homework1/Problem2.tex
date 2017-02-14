@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+
+\noindent Problem 2:   What are the two's complement representations for the following (decimal) numbers? Show your work. Submit a tex file or equivalent (word, pages, etc) on your github directory "Homework 1". 
+\newline
+\newline
+a) 10\\
+10 represented in binary system is 1010. since it is positive number, the two's complement of it is still 1010.
+\newline
+\newline
+b) 436\\
+436 in binary system is 110110100 ($256+128+32+16+4=2^8+2^7+2^5+2^4+2^2$), and again it's also the value of its two's complement.
+\newline 
+\newline 
+c) 1024\\
+1024 in binary system is 10000000000 ($1024=2^{10}$), and it's also the value of its two's complement.
+\newline  
+\newline
+d) -13\\
+13 in binary system is 1101 ($8+4+1$). flip 1101 to get 0010. The next step is adding 1 to the flipped result 0010, $0010+1=0011$. Since the two's complement of negative number always start with 1, we need to add 1 to the left end. So the  two's complement of -13 is 10011.
+\newline 
+\newline
+e) -1023\\
+1024 in binary system is 10000000000. Since 1023=1024-1, so 1023 in binary system is 1111111111. Repeat the precedure in d): flip, add 1 , check and make the left end is 1. Then we can obtain the two's complement of -1023 which is 10000000001.
+\newline  
+\newline
+f) -1024\\
+1024 in binary system is 10000000000. Repeat the same precedure we can obtain the two's complement of -1024 which is 10000000000. (since 11bits can storage from -1024 to 1023, -1024 has two's complement representation in 11bits.) 
+\end{document}
